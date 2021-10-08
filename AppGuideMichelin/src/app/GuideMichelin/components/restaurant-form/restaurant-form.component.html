@@ -1,0 +1,63 @@
+<br> <br> <br>
+
+<form #form="ngForm" (ngSubmit)="submit()">
+  <div>
+    <label for="id">Pseudo</label>
+    <input #idInput="ngModel" type="number" id="id" name="ID" required [(ngModel)]="restaurant.id">
+    <span *ngIf="idInput.invalid && idInput.errors && idInput.errors.required" style="color: darkred">Le champs est requis</span>
+  </div>
+
+  <div>
+    <label for="nom">Nom du restaurant</label>
+    <input #nomInput="ngModel" id="nom" name="NOM" required minlength="1" maxlength="30" [(ngModel)]="restaurant.nom">
+    <span *ngIf="nomInput.invalid && nomInput.errors && nomInput.errors.required" style="color: darkred">Le champs est requis</span>
+    <span *ngIf="nomInput.invalid && nomInput.errors && nomInput.errors.maxlength" style="color: red">Le champs est trop long</span>
+  </div>
+
+
+  <div>
+    <label for="adresse">Adresse</label>
+    <input #adresseInput="ngModel" id="adresse" name="ADRESSE" required minlength="5" maxlength="50" [(ngModel)]="restaurant.adresse">
+    <span *ngIf="adresseInput.invalid && adresseInput.errors && adresseInput.errors.required" style="color: darkred">Le champs est requis</span>
+    <span *ngIf="adresseInput.invalid && adresseInput.errors && adresseInput.errors.minlength" style="color: orangered">Le champs est trop court</span>
+    <span *ngIf="adresseInput.invalid && adresseInput.errors && adresseInput.errors.maxlength" style="color: red">Le champs est trop long</span>
+  </div>
+
+  <br>
+  <input type="submit">
+</form>
+
+
+
+{{restaurant | json}}
+
+<!--
+<form #form="ngForm" (ngSubmit)="submit()">
+  <div>
+    <label for="username">Pseudo</label>
+    <input #usernameInput="ngModel" type="text" id="username" name="USERNAME" required minlength="3" [(ngModel)]="livre.username">
+    <span *ngIf="usernameInput.invalid && usernameInput.errors && usernameInput.errors.required" style="color: darkred">Le champs est requis</span>
+    <span *ngIf="usernameInput.invalid && usernameInput.errors && usernameInput.errors.minlength" style="color: orangered">Le champs est trop court</span>
+  </div>
+
+  <div>
+    <label for="firstname">Prénom</label>
+    <input #firstnameInput="ngModel" id="firstname" name="FIRSTNAME" required minlength="3" [(ngModel)]="livre.firstname">
+    <span *ngIf="firstnameInput.invalid && firstnameInput.errors && firstnameInput.errors.required" style="color: darkred">Le champs est requis</span>
+    <span *ngIf="firstnameInput.invalid && firstnameInput.errors && firstnameInput.errors.minlength" style="color: orangered">Le champs est trop court</span>
+  </div>
+
+  <div>
+    <label for="lastname">Nom</label>
+    <input #lastnameInput="ngModel" id="lastname" name="LASTNAME" required minlength="3" [(ngModel)]="livre.lastname">
+    <span *ngIf="lastnameInput.invalid && lastnameInput.errors && lastnameInput.errors.required" style="color: darkred">Le champs est requis</span>
+    <span *ngIf="lastnameInput.invalid && lastnameInput.errors && lastnameInput.errors.minlength" style="color: orangered">Le champs est trop court</span>
+  </div>
+
+  <br>
+  <input type="submit">
+</form>
+
+{{livre | json}}
+
+-->

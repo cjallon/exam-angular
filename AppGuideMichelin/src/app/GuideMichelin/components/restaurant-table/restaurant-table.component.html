@@ -1,0 +1,48 @@
+<p>Tableau des restaurants disponibles dans notre guide : </p>
+
+<table>
+  <thead>
+  <tr>
+    <th colspan="1">Id restaurant</th>
+    <th colspan="1">Nom du restaurant</th>
+    <th colspan="1">Adresse</th>
+    <th colspan="1">Moyenne d'étoiles</th>
+    <th colspan="1">Détails</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let restaurant of restaurants">
+    <td>{{ restaurant.id}}</td>
+    <td>{{ restaurant.nom }}</td>
+    <td>{{ restaurant.adresse }}</td>
+    <td appCouleurs> </td>
+    <td><a routerLink=""></a> </td>
+  </tr>
+  </tbody>
+</table>
+
+
+
+<!--
+<table>
+  <thead>
+  <tr>
+    <th colspan="1">Nom du restaurant</th>
+    <th colspan="1">Adresse</th>
+    <th colspan="1">Moyenne d'étoiles</th>
+    <th colspan="1">Détails</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let restaurant of restaurants">
+    <td>{{ restaurant.nom }}</td>
+    <td>{{ restaurant.adresse }}</td>
+    <td>evaluations</td>
+    <td>test</td>
+  </tr>
+  </tbody>
+</table>
+-->
+
+<!-- <button routerLink="">page du restaurant</button> -->
+
